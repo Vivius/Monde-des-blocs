@@ -23,8 +23,9 @@ public class Table {
 
     }
 
-    public void afficherTable() {
-        System.out.println("je suis une pauvre table");
+    public String afficherTable() {
+        String intro = "- Salut, je suis la table j'ai ";
+        return intro+"rien";
     }
 
     public List<PileCube> getPileCube() {
