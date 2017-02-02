@@ -2,13 +2,13 @@ package info628;
 
 public enum TailleCube
 {
- grand, moyen, petit;
+ 	grand, moyen, petit;
  
- public static TailleCube getTaille(String taille) {
+	public static TailleCube getTaille(String taille) {
 		for (TailleCube t:TailleCube.values())
 			if (t.name().equalsIgnoreCase(taille))
-				return t;		
+				return t;
 		return TailleCube.grand;
 	}
-	
+
 }

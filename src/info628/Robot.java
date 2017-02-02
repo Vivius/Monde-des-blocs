@@ -30,8 +30,11 @@ public class Robot {
     }
 
 
-    public void prendreCubeSurTable(TailleCube taille, String couleur) {
-
+    public void prendreCubeSurTable(TailleCube taille, Couleur couleur) {
+        Cube tempCube;
+        if((tempCube = getTable().chercherCube(taille, couleur)) != null) {
+            setCube(tempCube);
+        }
     }
 
     public void poserCubeSurCube(TailleCube taille, String couleur) {
