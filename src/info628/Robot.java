@@ -43,7 +43,10 @@ public class Robot {
     }
 
     public void afficherRobot() {
-        System.out.println("je suis le robot");
+
+        if(mainVide()) System.out.println("Main du robot : rien");
+        else System.out.println("Main du robot : cube");
+
     }
 
     public Cube getCube() {
