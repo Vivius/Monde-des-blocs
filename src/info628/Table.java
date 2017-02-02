@@ -25,7 +25,7 @@ public class Table {
 
     public String afficherTable() {
         String intro = "- Salut, je suis la table j'ai ";
-        return intro+"rien";
+        return intro+" "+getPileCube();
     }
 
     public List<PileCube> getPileCube() {
