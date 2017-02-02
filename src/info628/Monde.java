@@ -45,6 +45,14 @@ public class Monde {
 			Keyboard.pause();
 			D2R2.detruireCube();
 			break;
+		case '3':
+			System.out.print("Couleur du cube : ");
+			coul = Couleur.getCouleur(Keyboard.getString());
+//			ecrire (coul, "couleur saisie");
+			System.out.print("Taille (grand/moyen/petit) : ");
+			tc = TailleCube.getTaille(Keyboard.getString());
+			D2R2.prendreCubeSurTable(tc, coul);
+			break;
 		}
 		afficherMonde(D2R2, tab);
 		} while (c != 'f');
