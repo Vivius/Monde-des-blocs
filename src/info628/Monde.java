@@ -33,7 +33,7 @@ public class Monde {
 		c = Keyboard.getChar();
 		switch (c) {
 		case '1': 
-			System.out.print("info628.Couleur du cube : ");
+			System.out.print("Couleur du cube : ");
 			coul = Couleur.getCouleur(Keyboard.getString());
 //			ecrire (coul, "couleur saisie");
 			System.out.print("Taille (grand/moyen/petit) : ");

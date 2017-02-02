@@ -21,10 +21,6 @@ public class Robot {
         }
     }
 
-    public void setCube(Cube cube) {
-
-    }
-
     public void detruireCube() {
 
     }
@@ -33,9 +29,6 @@ public class Robot {
 
     }
 
-    public Cube getCube() {
-        return this.cube;
-    }
 
     public void prendreCubeSurTable(TailleCube taille, String couleur) {
 
@@ -53,4 +46,19 @@ public class Robot {
         System.out.println("je suis le robot");
     }
 
+    public Cube getCube() {
+        return cube;
+    }
+
+    public void setCube(Cube cube) {
+        this.cube = cube;
+    }
+
+    public Table getTable() {
+        return table;
+    }
+
+    public void setTable(Table table) {
+        this.table = table;
+    }
 }
