@@ -10,8 +10,8 @@ public class Table {
 
     }
 
-    public Cube chercherCube(TailleCube taille, String couleur) {
-        return new Cube();
+    public Cube chercherCube(TailleCube taille, Couleur couleur) {
+        return new Cube(couleur, taille);
     }
 
     public void empilerCube(Cube cube, TailleCube taille, String couleur) {

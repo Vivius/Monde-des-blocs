@@ -4,6 +4,11 @@ public class Cube {
     private Couleur Couleur;
     private TailleCube Taille;
 
+    public Cube(info628.Couleur couleur, TailleCube taille) {
+        Couleur = couleur;
+        Taille = taille;
+    }
+
     public void compare(TailleCube taille, String couleur) {
 
     }

@@ -9,11 +9,16 @@ public class Robot {
     }
 
     public boolean mainVide() {
-        return false;
+        if(getCube() == null)
+            return true;
+        else
+            return false;
     }
 
     public void creerCube(Couleur couleur, TailleCube taille) {
-        getCube().setCouleur(couleur);
+        if(mainVide()) {
+            setCube(new Cube(couleur, taille));
+        }
     }
 
     public void setCube(Cube cube) {
