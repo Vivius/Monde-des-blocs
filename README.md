@@ -1,2 +1,2 @@
-# info628.Monde-des-blocs
-TP- de conception objet
+# INFO628 Monde-des-blocs
+TP1-2 de conception objet
