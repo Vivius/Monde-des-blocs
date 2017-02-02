@@ -31,9 +31,11 @@ public class Robot {
 
 
     public void prendreCubeSurTable(TailleCube taille, Couleur couleur) {
-        Cube tempCube;
-        if((tempCube = getTable().chercherCube(taille, couleur)) != null) {
-            setCube(tempCube);
+        if(mainVide()) {
+            Cube tempCube;
+            if((tempCube = getTable().chercherCube(taille, couleur)) != null) {
+                setCube(tempCube);
+            }
         }
     }
 

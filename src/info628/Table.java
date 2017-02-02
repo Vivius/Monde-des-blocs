@@ -11,7 +11,12 @@ public class Table {
     }
 
     public Cube chercherCube(TailleCube taille, Couleur couleur) {
-        return new Cube(couleur, taille);
+        for (PileCube pile : getPileCube()) {
+            if(pile.compareSommet(taille, couleur)) {
+                return pile.depiler();
+            }
+        }
+        return null;
     }
 
     public void empilerCube(Cube cube, TailleCube taille, String couleur) {
@@ -22,4 +27,11 @@ public class Table {
         System.out.println("je suis une pauvre table");
     }
 
+    public List<PileCube> getPileCube() {
+        return pileCube;
+    }
+
+    public void setPileCube(List<PileCube> pileCube) {
+        this.pileCube = pileCube;
+    }
 }

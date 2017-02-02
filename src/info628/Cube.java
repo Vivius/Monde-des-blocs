@@ -9,8 +9,11 @@ public class Cube {
         Taille = taille;
     }
 
-    public void compare(TailleCube taille, String couleur) {
-
+    public boolean compare(TailleCube taille, Couleur couleur) {
+        if(getTaille() == taille && getCouleur() == couleur)
+            return true;
+        else
+            return false;
     }
 
     public Couleur getCouleur() {
