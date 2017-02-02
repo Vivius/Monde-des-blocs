@@ -7,7 +7,7 @@ public class PileCube {
     private List<Cube> cubes = new ArrayList<Cube> ();
 
     public boolean compareSommet(TailleCube taille, Couleur couleur) {
-        return getCubes().get(getCubes().size()-1).compare(taille, couleur);
+        return getCubes().get(getCubes().size() - 1).compare(taille, couleur);
     }
 
     public boolean estVide() {
@@ -19,7 +19,7 @@ public class PileCube {
     }
 
     public Cube depiler() {
-        Cube c = getCubes().get(getCubes().size()-1);
+        Cube c = getCubes().get(getCubes().size() - 1);
         getCubes().remove(c);
         return c;
     }
