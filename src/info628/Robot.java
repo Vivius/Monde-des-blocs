@@ -22,7 +22,7 @@ public class Robot {
     }
 
     public void detruireCube() {
-
+        setCube(null);
     }
 
     public void poserCubeSurTable() {
