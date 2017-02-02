@@ -45,10 +45,10 @@ public class Robot {
         return true;
     }
 
-    public void afficherRobot() {
-
-        if(mainVide()) System.out.println("Main du robot : rien");
-        else System.out.println("Main du robot : cube");
+    public String afficherRobot() {
+        String intro = "- Bonjour, je suis le robot dans ma main j'ai ";
+        if(mainVide()) return(intro+"rien");
+        else return(intro+"un cube");
 
     }
 

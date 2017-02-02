@@ -51,9 +51,9 @@ public class Monde {
 	}
 
 	private static void afficherMonde(Robot R, Table T) {
-		ecrire(Couleur.noir, "Etat du monde : ");
-		R.afficherRobot();
-		T.afficherTable();
+		ecrire(Couleur.rouge, "Etat du monde : ");
+		ecrire(Couleur.bleu, R.afficherRobot());
+		ecrire(Couleur.violet, T.afficherTable());
 //		Keyboard.pause();
 	
 	}
