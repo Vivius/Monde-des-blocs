@@ -13,12 +13,18 @@ public class Table {
     }
 
     public Cube chercherCube(TailleCube taille, Couleur couleur) {
+        Cube cube = null;
+        PileCube pc = null;
         for (PileCube pile : getPilesCube()) {
             if(pile.compareSommet(taille, couleur)) {
-                return pile.depiler();
+                cube =  pile.depiler();
+                pc = pile;
+                break;
             }
         }
-        return null;
+        if(pc != null && pc.estVide())
+            getPilesCube().remove(pc);
+        return cube;
     }
 
     public void empilerCube(Cube cube, TailleCube taille, Couleur couleur) {
@@ -26,8 +32,11 @@ public class Table {
     }
 
     public String afficherTable() {
-        String intro = " - Salut, je suis la table j'ai ";
-        return intro + " " + getPilesCube();
+        String str = " - Salut, je suis la table j'ai : \n";
+        for(PileCube pi : getPilesCube()) {
+            str += pi.toString() + "  ";
+        }
+        return str;
     }
 
     public List<PileCube> getPilesCube() {
