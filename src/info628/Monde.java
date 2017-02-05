@@ -29,6 +29,7 @@ public class Monde {
 			System.out.println("2 - détruire un cube");
 			System.out.println("3 - prendre un cube");
 			System.out.println("4 - poser le cube sur la table");
+			System.out.println("5 - poser le cube un autre cube");
 			System.out.println("f - fin du monde");
 			System.out.print("Votre choix : ");
 			c = Keyboard.getChar();
@@ -56,6 +57,14 @@ public class Monde {
 					break;
 				case '4':
 					D2R2.poserCubeSurTable();
+					break;
+				case '5':
+					System.out.print("Couleur du cube sur lequel se placer: ");
+					coul = Couleur.getCouleur(Keyboard.getString());
+					//ecrire (coul, "couleur saisie");
+					System.out.print("Taille du cube sur lequel se placer (grand/moyen/petit) : ");
+					tc = TailleCube.getTaille(Keyboard.getString());
+					D2R2.poserCubeSurCube(tc, coul);
 					break;
 			}
 			afficherMonde(D2R2, tab);

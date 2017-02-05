@@ -41,8 +41,13 @@ public class Robot {
         }
     }
 
-    public void poserCubeSurCube(TailleCube taille, String couleur) {
-
+    public void poserCubeSurCube(TailleCube taille, Couleur couleur) {
+        if(!mainVide()) {
+            if(poserCubeCompatible(taille)) {
+                if(getTable().empilerCube(getCube(), taille, couleur))
+                    detruireCube();
+            }
+        }
     }
 
     private boolean poserCubeCompatible(TailleCube taille) {
@@ -50,7 +55,7 @@ public class Robot {
             return true;
         else if(getCube().getTaille() == TailleCube.moyen && (taille == TailleCube.grand || taille == TailleCube.moyen))
             return true;
-        else if(taille == TailleCube.petit)
+        else if(getCube().getTaille() == TailleCube.petit)
             return true;
         return  false;
     }

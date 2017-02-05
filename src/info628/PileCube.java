@@ -40,10 +40,10 @@ public class PileCube {
 
     @Override
     public String toString() {
-        String str = "[  ";
+        String str = "o:[  ";
         for (Cube c : getCubes())
             str += c.toString() + "  ";
-        str += "]";
+        str += "]=>";
         return str;
     }
 }

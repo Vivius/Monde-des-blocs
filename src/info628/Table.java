@@ -27,14 +27,20 @@ public class Table {
         return cube;
     }
 
-    public void empilerCube(Cube cube, TailleCube taille, Couleur couleur) {
-
+    public boolean empilerCube(Cube cube, TailleCube taille, Couleur couleur) {
+        for(PileCube pc : getPilesCube()) {
+            if(pc.compareSommet(taille, couleur)) {
+                pc.empiler(cube);
+                return true;
+            }
+        }
+        return false;
     }
 
     public String afficherTable() {
-        String str = " - Salut, je suis la table j'ai : \n";
-        for(PileCube pi : getPilesCube()) {
-            str += pi.toString() + "  ";
+        String str = " - Salut, je suis la table. Voici ma constitution : \n";
+        for(PileCube pc : getPilesCube()) {
+            str += pc.toString() + "  ";
         }
         return str;
     }
