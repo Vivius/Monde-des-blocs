@@ -8,10 +8,24 @@ public class Table {
 
     public Table() { }
 
+    /**
+     * Crée une nouvelle pile de cube et lui insère le cube passé en paramètre.
+     *
+     * @param cube Cube
+     */
     public void poserCubeSurTable(Cube cube) {
         getPilesCube().add(new PileCube(cube));
     }
 
+    /**
+     * Permet de cherche un cube de taille et couleur données sur la table (liste des piles de cubes).
+     * Si un cube est trouvé, il est retourné et enlever de la pile où il a été trouvé.
+     * Autrement null est renvoyé.
+     *
+     * @param taille TailleCube
+     * @param couleur Couleur
+     * @return Cube
+     */
     public Cube chercherCube(TailleCube taille, Couleur couleur) {
         Cube cube = null;
         PileCube pc = null;
@@ -27,6 +41,15 @@ public class Table {
         return cube;
     }
 
+    /**
+     * Permet d'empiler le cube donné sur un cube se trouvant sur la table ayant la taille et la couleur données en paramètre.
+     * Si le cube a pu être empiler, true est renvoyé.
+     *
+     * @param cube Cube
+     * @param taille TailleCube
+     * @param couleur Couleur
+     * @return boolean
+     */
     public boolean empilerCube(Cube cube, TailleCube taille, Couleur couleur) {
         for(PileCube pc : getPilesCube()) {
             if(pc.compareSommet(taille, couleur)) {

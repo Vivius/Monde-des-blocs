@@ -1,5 +1,6 @@
 package info628;
 
+
 public class Cube {
     private Couleur couleur;
     private TailleCube taille;
@@ -11,6 +12,13 @@ public class Cube {
         this.taille = taille;
     }
 
+    /**
+     * Retourne true si la taille et la couleur en paramètres correspondent aux propriétés du cube actuel.
+     *
+     * @param taille TailleCube
+     * @param couleur Couleur
+     * @return boolean
+     */
     public boolean compare(TailleCube taille, Couleur couleur) {
         return getTaille() == taille && getCouleur() == couleur;
     }
