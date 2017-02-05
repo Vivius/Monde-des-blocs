@@ -1,12 +1,12 @@
 package info628;
 
 public class Cube {
-    private Couleur Couleur;
-    private TailleCube Taille;
+    private Couleur couleur;
+    private TailleCube taille;
 
     public Cube(Couleur couleur, TailleCube taille) {
-        Couleur = couleur;
-        Taille = taille;
+        this.couleur = couleur;
+        this.taille = taille;
     }
 
     public boolean compare(TailleCube taille, Couleur couleur) {
@@ -17,18 +17,18 @@ public class Cube {
     }
 
     public Couleur getCouleur() {
-        return Couleur;
+        return couleur;
     }
 
     public void setCouleur(Couleur couleur) {
-        Couleur = couleur;
+        this.couleur = couleur;
     }
 
     public TailleCube getTaille() {
-        return Taille;
+        return taille;
     }
 
     public void setTaille(TailleCube taille) {
-        Taille = taille;
+        this.taille = taille;
     }
 }
