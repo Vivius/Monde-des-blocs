@@ -4,16 +4,15 @@ public class Cube {
     private Couleur couleur;
     private TailleCube taille;
 
+    public Cube() { }
+
     public Cube(Couleur couleur, TailleCube taille) {
         this.couleur = couleur;
         this.taille = taille;
     }
 
     public boolean compare(TailleCube taille, Couleur couleur) {
-        if(getTaille() == taille && getCouleur() == couleur)
-            return true;
-        else
-            return false;
+        return getTaille() == taille && getCouleur() == couleur;
     }
 
     public Couleur getCouleur() {
@@ -30,5 +29,10 @@ public class Cube {
 
     public void setTaille(TailleCube taille) {
         this.taille = taille;
+    }
+
+    @Override
+    public String toString() {
+        return "{'"+getTaille().toString()+"', '"+getCouleur().toString()+"'}";
     }
 }

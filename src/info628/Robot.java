@@ -4,15 +4,14 @@ public class Robot {
     private Cube cube;
     private Table table;
 
+    public Robot() { }
+
     public Robot(Table table) {
         this.table = table;
     }
 
     public boolean mainVide() {
-        if(getCube() == null)
-            return true;
-        else
-            return false;
+        return getCube() == null;
     }
 
     public void creerCube(Couleur couleur, TailleCube taille) {
@@ -26,7 +25,10 @@ public class Robot {
     }
 
     public void poserCubeSurTable() {
-
+        if(!mainVide()) {
+            getTable().poserCubeSurTable(getCube());
+            detruireCube();
+        }
     }
 
 
@@ -44,14 +46,19 @@ public class Robot {
     }
 
     private boolean poserCubeCompatible(TailleCube taille) {
-        return true;
+        if(getCube().getTaille() == TailleCube.grand && taille == TailleCube.grand)
+            return true;
+        else if(getCube().getTaille() == TailleCube.moyen && (taille == TailleCube.grand || taille == TailleCube.moyen))
+            return true;
+        else if(taille == TailleCube.petit)
+            return true;
+        return  false;
     }
 
     public String afficherRobot() {
-        String intro = "- Bonjour, je suis le robot dans ma main j'ai ";
-        if(mainVide()) return(intro+"rien");
-        else return(intro+"un cube");
-
+        String intro = " - Bonjour, je suis le robot. Dans ma main j'ai : ";
+        if(mainVide()) return(intro + "rien");
+        else return(intro + "un cube de taille '" + getCube().getTaille().toString() + "' et de couleur '" + getCube().getCouleur().toString() + "'");
     }
 
     public Cube getCube() {
