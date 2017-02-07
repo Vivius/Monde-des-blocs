@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Table {
-    private List<PileCube> pilesCube = new ArrayList<PileCube> ();
+    private List<PileCube> pilesCubes = new ArrayList<PileCube> ();
 
     public Table() { }
 
@@ -16,7 +16,7 @@ public class Table {
     public void poserCubeSurTable(Cube cube) {
         PileCube pile = new PileCube();
         pile.empiler(cube);
-        getPilesCube().add(pile);
+        getPilesCubes().add(pile);
     }
 
     /**
@@ -31,7 +31,7 @@ public class Table {
     public Cube chercherCube(TailleCube taille, Couleur couleur) {
         Cube cube = null;
         PileCube pc = null;
-        for (PileCube pile : getPilesCube()) {
+        for (PileCube pile : getPilesCubes()) {
             if(pile.compareSommet(taille, couleur)) {
                 cube =  pile.depiler();
                 pc = pile;
@@ -39,7 +39,7 @@ public class Table {
             }
         }
         if(pc != null && pc.estVide())
-            getPilesCube().remove(pc);
+            getPilesCubes().remove(pc);
         return cube;
     }
 
@@ -53,7 +53,7 @@ public class Table {
      * @return boolean
      */
     public boolean empilerCube(Cube cube, TailleCube taille, Couleur couleur) {
-        for(PileCube pc : getPilesCube()) {
+        for(PileCube pc : getPilesCubes()) {
             if(pc.compareSommet(taille, couleur)) {
                 pc.empiler(cube);
                 return true;
@@ -64,17 +64,17 @@ public class Table {
 
     public String afficherTable() {
         String str = " - Salut, je suis la table. Voici ma constitution : \n";
-        for(PileCube pc : getPilesCube()) {
+        for(PileCube pc : getPilesCubes()) {
             str += pc.toString() + "  ";
         }
         return str;
     }
 
-    public List<PileCube> getPilesCube() {
-        return pilesCube;
+    public List<PileCube> getPilesCubes() {
+        return pilesCubes;
     }
 
     public void setPilesCube(List<PileCube> pileCube) {
-        this.pilesCube = pileCube;
+        this.pilesCubes = pileCube;
     }
 }
