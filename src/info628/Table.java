@@ -14,7 +14,9 @@ public class Table {
      * @param cube Cube
      */
     public void poserCubeSurTable(Cube cube) {
-        getPilesCube().add(new PileCube(cube));
+        PileCube pile = new PileCube();
+        pile.empiler(cube);
+        getPilesCube().add(pile);
     }
 
     /**
